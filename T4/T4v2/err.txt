@@ -1,0 +1,1 @@
+dicc-full.txt: el diccionario esta lleno

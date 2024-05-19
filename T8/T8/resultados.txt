@@ -1,0 +1,86 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-25-amd64 #1 SMP Debian 5.10.191-1 (2023-08-16) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -Wall -pedantic -Werror -std=c18  mas-grandes.c pss.c -lm -o mas-grandes.bin-san
+Ejecutando: ./mas-grandes.bin-san dir 2 > salida.txt
+La salida estandar es:
+-------------------------------------------
+dir/test-reemplazar.c 11211
+dir/test-comprimir.c 7317
+-------------------------------------------
+Comparando salida estandar con salida esperada con:
+diff salida.txt dir-ref.txt
+Aprobado
+Ejecutando: ./mas-grandes.bin-san /opt/riscv 10 > salida.txt
+La salida estandar es:
+-------------------------------------------
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1plus 253939528
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1 236488760
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/lto1 227049456
+/opt/riscv/bin/riscv64-unknown-elf-lto-dump 226965384
+/opt/riscv/bin/riscv64-unknown-elf-gdb 117162560
+/opt/riscv/lib/libriscv64-unknown-elf-sim.a 12317776
+/opt/riscv/bin/riscv64-unknown-elf-objdump 9565488
+/opt/riscv/riscv64-unknown-elf/bin/objdump 9565488
+/opt/riscv/bin/riscv64-unknown-elf-run 9439752
+/opt/riscv/bin/riscv64-unknown-elf-ld 9400464
+-------------------------------------------
+Comparando salida estandar con salida esperada con:
+diff salida.txt opt-riscv-ref-x86_64.txt
+Aprobado
+==== run-g ====
+gcc -g -Wall -pedantic -Werror -std=c18  mas-grandes.c pss.c -lm -o mas-grandes.bin-g
+Ejecutando: ./mas-grandes.bin-g dir 2 > salida.txt
+La salida estandar es:
+-------------------------------------------
+dir/test-reemplazar.c 11211
+dir/test-comprimir.c 7317
+-------------------------------------------
+Comparando salida estandar con salida esperada con:
+diff salida.txt dir-ref.txt
+Aprobado
+Ejecutando: ./mas-grandes.bin-g /opt/riscv 10 > salida.txt
+La salida estandar es:
+-------------------------------------------
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1plus 253939528
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1 236488760
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/lto1 227049456
+/opt/riscv/bin/riscv64-unknown-elf-lto-dump 226965384
+/opt/riscv/bin/riscv64-unknown-elf-gdb 117162560
+/opt/riscv/lib/libriscv64-unknown-elf-sim.a 12317776
+/opt/riscv/bin/riscv64-unknown-elf-objdump 9565488
+/opt/riscv/riscv64-unknown-elf/bin/objdump 9565488
+/opt/riscv/bin/riscv64-unknown-elf-run 9439752
+/opt/riscv/bin/riscv64-unknown-elf-ld 9400464
+-------------------------------------------
+Comparando salida estandar con salida esperada con:
+diff salida.txt opt-riscv-ref-x86_64.txt
+Aprobado
+==== run ====
+gcc -O -DOPT=1 -Wall -pedantic -Werror -std=c18  mas-grandes.c pss.c -lm -o mas-grandes.bin
+Ejecutando: ./mas-grandes.bin dir 2 > salida.txt
+La salida estandar es:
+-------------------------------------------
+dir/test-reemplazar.c 11211
+dir/test-comprimir.c 7317
+-------------------------------------------
+Comparando salida estandar con salida esperada con:
+diff salida.txt dir-ref.txt
+Aprobado
+Ejecutando: ./mas-grandes.bin /opt/riscv 10 > salida.txt
+La salida estandar es:
+-------------------------------------------
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1plus 253939528
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1 236488760
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/lto1 227049456
+/opt/riscv/bin/riscv64-unknown-elf-lto-dump 226965384
+/opt/riscv/bin/riscv64-unknown-elf-gdb 117162560
+/opt/riscv/lib/libriscv64-unknown-elf-sim.a 12317776
+/opt/riscv/bin/riscv64-unknown-elf-objdump 9565488
+/opt/riscv/riscv64-unknown-elf/bin/objdump 9565488
+/opt/riscv/bin/riscv64-unknown-elf-run 9439752
+/opt/riscv/bin/riscv64-unknown-elf-ld 9400464
+-------------------------------------------
+Comparando salida estandar con salida esperada con:
+diff salida.txt opt-riscv-ref-x86_64.txt
+Aprobado

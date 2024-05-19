@@ -1,0 +1,10 @@
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1plus 238554680
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/cc1 221011368
+/opt/riscv/libexec/gcc/riscv64-unknown-elf/11.1.0/lto1 212144136
+/opt/riscv/bin/riscv64-unknown-elf-lto-dump 212059328
+/opt/riscv/bin/riscv64-unknown-elf-gdb 103843896
+/opt/riscv/lib/libriscv64-unknown-elf-sim.a 10167976
+/opt/riscv/bin/riscv64-unknown-elf-objdump 10027304
+/opt/riscv/riscv64-unknown-elf/bin/objdump 10027304
+/opt/riscv/bin/riscv64-unknown-elf-ld.bfd 9710680
+/opt/riscv/riscv64-unknown-elf/bin/ld.bfd 9710680

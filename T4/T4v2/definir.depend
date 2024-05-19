@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1696022426 source:/home/lmateu/Cursos/CC3301/232/T4-sol/definir.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	"pss.h"
+
+1696017622 /home/lmateu/Cursos/CC3301/232/T4-sol/pss.h
+
+1696017622 source:/home/lmateu/Cursos/CC3301/232/T4-sol/pss.c
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	"pss.h"
+

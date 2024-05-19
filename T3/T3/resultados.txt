@@ -1,0 +1,63 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-25-amd64 #1 SMP Debian 5.10.191-1 (2023-08-16) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18 -Wno-unused-function  test-prev.c prev.c -lm -o prev.bin-san
+./prev.bin-san
+===============================
+Tests de la funcion asignarPrev
+===============================
+
+Caso arbol nulo: debe continuar vacio
+Caso arbol de un nodo con x=5
+Caso abb de un nodo x=1 con subarbol derecho x=2
+Caso abb de un nodo x=2 con subarbol izquierdo x=1
+Caso abb de un nodo x=2 con subarboles izquierdo y derecho
+Caso abb del enunciado
+Caso abbs de 1 a 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+Tiempo = 731 milisegundos
+Felicitaciones: su solucion es correcta
+==== run-g ====
+gcc -g -Wall -Werror -std=c18 -Wno-unused-function  test-prev.c prev.c -lm -o prev.bin-g
+./prev.bin-g
+===============================
+Tests de la funcion asignarPrev
+===============================
+
+Caso arbol nulo: debe continuar vacio
+Caso arbol de un nodo con x=5
+Caso abb de un nodo x=1 con subarbol derecho x=2
+Caso abb de un nodo x=2 con subarbol izquierdo x=1
+Caso abb de un nodo x=2 con subarboles izquierdo y derecho
+Caso abb del enunciado
+Caso abbs de 1 a 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+Tiempo = 80 milisegundos
+Felicitaciones: su solucion es correcta
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18 -Wno-unused-function  test-prev.c prev.c -lm -o prev.bin
+Midiendo cuanto demora la solucion del profesor
+rm -f tiempo-ref.txt
+chmod +x prof.ref-x86_64
+./prof.ref-x86_64 ref > /dev/null
+Tiempos de referencia =  8494
+Verificando y comparando con su solucion
+./prev.bin 8494
+===============================
+Tests de la funcion asignarPrev
+===============================
+
+Caso arbol nulo: debe continuar vacio
+Caso arbol de un nodo con x=5
+Caso abb de un nodo x=1 con subarbol derecho x=2
+Caso abb de un nodo x=2 con subarbol izquierdo x=1
+Caso abb de un nodo x=2 con subarboles izquierdo y derecho
+Caso abb del enunciado
+Caso abbs de 1 a 100 nodos, equilibrado, desequilibrado por izquierda y derecha
+
+==================================
+Benchmark de asignarPrev
+==================================
+
+Tiempo = 10500 milisegundos
+Tiempo de referencia = 8494 milisegundos
+Porcentaje de sobrecosto de asignarPrev: 24 %
+Felicitaciones: su solucion es correcta y eficiente

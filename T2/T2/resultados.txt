@@ -1,0 +1,66 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-25-amd64 #1 SMP Debian 5.10.191-1 (2023-08-16) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18 -Wno-unused-function  test-elim.c elim.c -lm -o elim.bin-san
+./elim.bin-san
+Tests de eliminar
+Tests de eliminados
+Test de uso de memoria de eliminados
+---------------------
+Benchmark de eliminar
+---------------------
+Intento= 1
+Tiempo para su version= 36 milisegundos
+Aprobado
+-----------------------
+Benchmark de eliminados
+-----------------------
+Intento= 1
+Tiempo para su version= 63 milisegundos
+Felicitaciones!  Aprobo todos los tests.
+==== run-g ====
+gcc -g -Wall -Werror -std=c18 -Wno-unused-function  test-elim.c elim.c -lm -o elim.bin-g
+./elim.bin-g
+Tests de eliminar
+Tests de eliminados
+Test de uso de memoria de eliminados
+---------------------
+Benchmark de eliminar
+---------------------
+Intento= 1
+Tiempo para su version= 14 milisegundos
+Aprobado
+-----------------------
+Benchmark de eliminados
+-----------------------
+Intento= 1
+Tiempo para su version= 25 milisegundos
+Felicitaciones!  Aprobo todos los tests.
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18 -Wno-unused-function  test-elim.c elim.c -lm -o elim.bin
+Midiendo cuanto demora la solucion del profesor
+rm -f tiempo-ref.txt
+chmod +x prof.ref-x86_64
+./prof.ref-x86_64 ref > /dev/null
+Tiempos de referencia =  292 567
+Verificando y comparando con su solucion
+./elim.bin 292 567
+Tests de eliminar
+Tests de eliminados
+Test de uso de memoria de eliminados
+---------------------
+Benchmark de eliminar
+---------------------
+Tiempo para la version del profesor= 292 milisegundos
+Intento= 1
+Tiempo para su version= 227 milisegundos
+Porcentaje de sobrecosto: -22 %
+Aprobado
+-----------------------
+Benchmark de eliminados
+-----------------------
+Tiempo para la version del profesor= 567 milisegundos
+Intento= 1
+Tiempo para su version= 471 milisegundos
+Porcentaje de sobrecosto: -16 %
+Felicitaciones!  Aprobo todos los tests.

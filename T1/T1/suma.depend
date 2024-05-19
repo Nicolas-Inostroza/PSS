@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1692397906 source:/home/pss/dichato/Cursos/CC3301/232/T1-sol/suma.c
+	<stdio.h>
+	"suma.h"
+
+1692394880 /home/pss/dichato/Cursos/CC3301/232/T1-sol/suma.h
+
+1692403430 source:/home/pss/dichato/Cursos/CC3301/232/T1-sol/test-suma.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<sys/time.h>
+	<sys/resource.h>
+	"suma.h"
+

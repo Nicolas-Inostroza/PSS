@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1700150545 source:/home/lmateu/Cursos/CC3301/232/T7-sol/test-viajante.c
+	<stdio.h>
+	<math.h>
+	<float.h>
+	<sys/time.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<stdint.h>
+	<limits.h>
+	"viajante.h"
+
+1700149902 /home/lmateu/Cursos/CC3301/232/T7-sol/viajante.h
+
+1700149925 source:/home/lmateu/Cursos/CC3301/232/T7-sol/viajante.c
+	<stdio.h>
+	<unistd.h>
+	<stdlib.h>
+	<math.h>
+	<float.h>
+	<sys/types.h>
+	<sys/wait.h>
+	"viajante.h"
+

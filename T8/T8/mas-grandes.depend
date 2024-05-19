@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1700839138 source:/home/lmateu/Cursos/CC3301/232/T8-sol/mas-grandes.c
+	<stdio.h>
+	<stdarg.h>
+	<sys/types.h>
+	<dirent.h>
+	<sys/stat.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"pss.h"
+
+1700835635 /home/lmateu/Cursos/CC3301/232/T8-sol/pss.h
+
+1700835635 source:/home/lmateu/Cursos/CC3301/232/T8-sol/pss.c
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	"pss.h"
+

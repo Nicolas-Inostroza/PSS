@@ -1,0 +1,14 @@
+casa:edificacion construida para ser habitada                                   
+alimento:sustancia ingerida por un ser vivo                                     
+canario:ave paseriforme de la familia de los fringilidos                        
+palacio:edificio utilizado como residencia de un magnate                        
+embarcacion:todo tipo de artilugio capaz de navegar en el agua                  
+bolsillo:bolsa pequena                                                          
+correr:andar tan rapidamente que los pies quedan en el aire                     
+nadar:trasladarse en el agua, con los brazos y sin tocar el suelo               
+posada:establecimiento economico de hospedaje para viajeros                     
+taladro:herramienta aguda o cortante con que se agujerea la madera              
+perro:mamifero domestico con olfato muy fino, inteligente y leal                
+techo:parte superior de un edificio que lo cubre y cierra                       
+celular:aparato portatil de un sistema de telefonia celular                     
+lluvia:precipitacion de particulas liquidas de agua                             

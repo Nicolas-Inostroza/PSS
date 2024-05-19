@@ -1,0 +1,128 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-25-amd64 #1 SMP Debian 5.10.191-1 (2023-08-16) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -Wall -Werror -pedantic -std=c18 -Wno-unused-function  definir.c pss.c -lm -o definir.bin-san
+bash test-definir.sh definir.bin-san
+-----------------------------------------------------------
+Tests unitarios
+Restaurando dicc.txt (una copia se encuentra en dicc-ini.txt)
+Restaurando dicc.txt con ./prof.ref-x86_64
+Ejecutando: ./definir.bin-san dicc.txt embarcacion "todo tipo de artilugio capaz de navegar en el agua"
+Ejecutando: ./definir.bin-san dicc.txt casa "edificacion construida para ser habitada"
+Ejecutando: ./definir.bin-san dicc.txt lluvia "precipitacion de particulas liquidas de agua"
+Ejecutando: ./definir.bin-san dicc.txt alimento "sustancia ingerida por un ser vivo"
+Ejecutando: ./definir.bin-san dicc.txt celular "aparato portatil de un sistema de telefonia celular"
+-----------------------------------------------------------
+Test con llave existente
+Ejecutando: ./definir.bin-san dicc.txt alimento "sustancia ingerida por un ser vivo"
+La llave alimento ya se encuentra en el diccionario
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test con un diccionario inexistente
+Ejecutando: ./definir.bin-san nodicc.txt bolsillo "bla bla"
+nodicc.txt: No such file or directory
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test con diccionario sin permiso de escritura
+Ejecutando: ./definir.bin-san /tmp/dicc.txt evangelio "bla bla"
+/tmp/dicc.txt: Permission denied
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test de uso incorrecto de parametros
+Ejecutando: ./definir.bin-san dicc.txt bolsillo "bolsa pequena" error
+Uso: ./definir <diccionario> <llave> <definicion>
+Bien.  Se diagnostico correctamente el error.
+Ejecutando: ./definir.bin-san bolsillo  ""
+Uso: ./definir <diccionario> <llave> <definicion>
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test de definir con un diccionario completamente lleno
+Ejecutando: ./definir.bin-san dicc-full.txt consejo "bla bla"
+dicc-full.txt: el diccionario esta lleno
+Bien.  Se diagnostico correctamente el error.
+
+Felicitaciones: aprobo todos los tests
+==== run-g ====
+gcc -g -Wall -Werror -pedantic -std=c18 -Wno-unused-function  definir.c pss.c -lm -o definir.bin-g
+bash test-definir.sh definir.bin-g
+-----------------------------------------------------------
+Tests unitarios
+Restaurando dicc.txt (una copia se encuentra en dicc-ini.txt)
+Restaurando dicc.txt con ./prof.ref-x86_64
+Ejecutando: ./definir.bin-g dicc.txt embarcacion "todo tipo de artilugio capaz de navegar en el agua"
+Ejecutando: ./definir.bin-g dicc.txt casa "edificacion construida para ser habitada"
+Ejecutando: ./definir.bin-g dicc.txt lluvia "precipitacion de particulas liquidas de agua"
+Ejecutando: ./definir.bin-g dicc.txt alimento "sustancia ingerida por un ser vivo"
+Ejecutando: ./definir.bin-g dicc.txt celular "aparato portatil de un sistema de telefonia celular"
+-----------------------------------------------------------
+Test con llave existente
+Ejecutando: ./definir.bin-g dicc.txt alimento "sustancia ingerida por un ser vivo"
+La llave alimento ya se encuentra en el diccionario
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test con un diccionario inexistente
+Ejecutando: ./definir.bin-g nodicc.txt bolsillo "bla bla"
+nodicc.txt: No such file or directory
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test con diccionario sin permiso de escritura
+Ejecutando: ./definir.bin-g /tmp/dicc.txt evangelio "bla bla"
+/tmp/dicc.txt: Permission denied
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test de uso incorrecto de parametros
+Ejecutando: ./definir.bin-g dicc.txt bolsillo "bolsa pequena" error
+Uso: ./definir <diccionario> <llave> <definicion>
+Bien.  Se diagnostico correctamente el error.
+Ejecutando: ./definir.bin-g bolsillo  ""
+Uso: ./definir <diccionario> <llave> <definicion>
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test de definir con un diccionario completamente lleno
+Ejecutando: ./definir.bin-g dicc-full.txt consejo "bla bla"
+dicc-full.txt: el diccionario esta lleno
+Bien.  Se diagnostico correctamente el error.
+
+Felicitaciones: aprobo todos los tests
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -pedantic -std=c18 -Wno-unused-function  definir.c pss.c -lm -o definir.bin
+bash test-definir.sh definir.bin
+-----------------------------------------------------------
+Tests unitarios
+Restaurando dicc.txt (una copia se encuentra en dicc-ini.txt)
+Restaurando dicc.txt con ./prof.ref-x86_64
+Ejecutando: ./definir.bin dicc.txt embarcacion "todo tipo de artilugio capaz de navegar en el agua"
+Ejecutando: ./definir.bin dicc.txt casa "edificacion construida para ser habitada"
+Ejecutando: ./definir.bin dicc.txt lluvia "precipitacion de particulas liquidas de agua"
+Ejecutando: ./definir.bin dicc.txt alimento "sustancia ingerida por un ser vivo"
+Ejecutando: ./definir.bin dicc.txt celular "aparato portatil de un sistema de telefonia celular"
+-----------------------------------------------------------
+Test con llave existente
+Ejecutando: ./definir.bin dicc.txt alimento "sustancia ingerida por un ser vivo"
+La llave alimento ya se encuentra en el diccionario
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test con un diccionario inexistente
+Ejecutando: ./definir.bin nodicc.txt bolsillo "bla bla"
+nodicc.txt: No such file or directory
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test con diccionario sin permiso de escritura
+Ejecutando: ./definir.bin /tmp/dicc.txt evangelio "bla bla"
+/tmp/dicc.txt: Permission denied
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test de uso incorrecto de parametros
+Ejecutando: ./definir.bin dicc.txt bolsillo "bolsa pequena" error
+Uso: ./definir <diccionario> <llave> <definicion>
+Bien.  Se diagnostico correctamente el error.
+Ejecutando: ./definir.bin bolsillo  ""
+Uso: ./definir <diccionario> <llave> <definicion>
+Bien.  Se diagnostico correctamente el error.
+-----------------------------------------------------------
+Test de definir con un diccionario completamente lleno
+Ejecutando: ./definir.bin dicc-full.txt consejo "bla bla"
+dicc-full.txt: el diccionario esta lleno
+Bien.  Se diagnostico correctamente el error.
+
+Felicitaciones: aprobo todos los tests
